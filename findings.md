@@ -1,5 +1,7 @@
 # Findings
 
+Firefox version: 83.0 (64-Bit), fedora 1.0
+
 set xpinstall.signatures.required to false
 
 ## `"incognito": "not_allowed"` in manifest.json: No
