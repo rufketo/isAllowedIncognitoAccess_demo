@@ -1,0 +1,20 @@
+{
+    "manifest_version": 2,
+
+    "applications": {
+        "gecko": {
+            "id": "isAllowedIncognitoAccess_demo@rufketo"
+        }
+    },
+
+    "incognito": "not_allowed",
+
+    "name": "isAllowedIncognitoAccess_demo",
+    "description": "Shows the result of `browser.extension.isAllowedIncognitoAccess()`.",
+    "version": "1.0",
+
+    "browser_action": {
+        "default_title": "isAllowedIncognitoAccess_demo",
+        "default_popup": "popup/popup.html"
+    }
+}
