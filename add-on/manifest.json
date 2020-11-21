@@ -7,8 +7,6 @@
         }
     },
 
-    "incognito": "not_allowed",
-
     "name": "isAllowedIncognitoAccess_demo",
     "description": "Shows the result of `browser.extension.isAllowedIncognitoAccess()`.",
     "version": "1.0",
