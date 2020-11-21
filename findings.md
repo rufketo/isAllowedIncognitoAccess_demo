@@ -2,6 +2,19 @@
 
 Firefox version: 83.0 (64-Bit), fedora 1.0
 
+**Summary:**
+
+- If `"incognito": "not_allowed"` is **not** in manifest.json:
+  - If `extensions.allowPrivateBrowsingByDefault: true` in `about:config`:
+    - `browser.extension.isAllowedIncognitoAccess()` returns `true`
+    - This cannot be changed by the user (**bug 1**)
+  - Else: `browser.extension.isAllowedIncognitoAccess()` returns the value configured by the user.
+- Else:
+  - If `extensions.allowPrivateBrowsingByDefault: true` in `about:config` (which is the default for Tor Browser): The extension cannot be installed. (**bug 2**)
+  - Else: `browser.extension.isAllowedIncognitoAccess()` always returns `false`.
+
+---
+
 set xpinstall.signatures.required to false
 
 ## `"incognito": "not_allowed"` in manifest.json: No
@@ -20,7 +33,7 @@ set xpinstall.signatures.required to false
 
 ### extensions.allowPrivateBrowsingByDefault: true
 
-"Run in Private Windows" is hidden in GUI
+"Run in Private Windows" is hidden in GUI – **Bug 1**
 
     extension.inIncognitoContext: false
     extension.isAllowedIncognitoAccess(): true
@@ -36,7 +49,7 @@ set xpinstall.signatures.required to false
 
 ### extensions.allowPrivateBrowsingByDefault: true
 
-installation prevented; message appears:
+installation prevented; message appears – **Bug 2**:
 
 - title: mozapps
 - content contains something like "add-on seems corrupted"
