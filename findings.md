@@ -7,10 +7,10 @@ Firefox version: 83.0 (64-Bit), fedora 1.0
 - If `"incognito": "not_allowed"` is **not** in manifest.json:
   - If `extensions.allowPrivateBrowsingByDefault: true` in `about:config`:
     - `browser.extension.isAllowedIncognitoAccess()` returns `true`
-    - This cannot be changed by the user (**bug 1**)
+    - This cannot be changed by the user ([**bug 1**](https://bugzilla.mozilla.org/show_bug.cgi?id=1678841))
   - Else: `browser.extension.isAllowedIncognitoAccess()` returns the value configured by the user.
 - Else:
-  - If `extensions.allowPrivateBrowsingByDefault: true` in `about:config` (which is the default for Tor Browser): The extension cannot be installed. (**bug 2**)
+  - If `extensions.allowPrivateBrowsingByDefault: true` in `about:config` (which is the default for Tor Browser): The extension cannot be installed. ([**bug 2**](https://bugzilla.mozilla.org/show_bug.cgi?id=1678847))
   - Else: `browser.extension.isAllowedIncognitoAccess()` always returns `false`.
 
 ---
